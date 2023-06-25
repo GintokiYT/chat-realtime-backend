@@ -3,6 +3,7 @@
 import express from 'express';
 import http from 'http';
 import { Server as SocketServer } from 'socket.io';
+import cors from 'cors';
 // import path from 'path';
 
 // const __filename = fileURLToPath(import.meta.url);
@@ -13,6 +14,8 @@ const server = http.createServer(app);
 const io = new SocketServer(server, {
   cors: '*'
 });
+
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
