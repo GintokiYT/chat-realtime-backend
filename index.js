@@ -27,6 +27,10 @@ const PORT = process.env.PORT || 3000;
 //   res.sendFile(path.join(staticPath, 'index.html'));
 // });
 
+app.get('/', (req, res) => {
+  res.send('Hello world!');
+})
+
 io.on('connection', socket => {
   console.log('Client connected');
   console.log(socket.id);
